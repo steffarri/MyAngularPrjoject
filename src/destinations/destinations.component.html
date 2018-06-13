@@ -1,0 +1,35 @@
+<div>
+<h1>{{ title }}</h1>
+<br/><br/>
+<div class="col-sm-12 description" id="description">
+    <br/>
+    These are all the places I have visited and that I have great reviews on! I loved visiting every place and continue
+    to travel to new places and have more reviews coming shortly. Each marker on this map will share the location and a
+    description of each place if you click it. I hope you enjoy!
+    <br/><br/>
+</div>
+<br/><br/>
+<div class="div-sm-12">
+        <div class="row">
+<div class="col-sm-6 map">
+   
+   
+<agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mappedClick($event)" (zoomChange)="zoomChange(z)">
+  <agm-marker *ngFor="let m of markers; let i = index"  [latitude]="m.lat"
+   [longitude]="m.lng" [markerDraggable]="m.draggable" (markerClick)="markerClick(infoWindow, m.info, m.label)">
+  <agm-info-window #infoWindow><strong></strong>{{m.label}}</agm-info-window>
+</agm-marker>
+</agm-map>
+</div>
+<div class="col-sm-6 info">
+    <Br/>
+  <p id="biglabel" class="biglabel"> {{label}}</p>
+    <br/><br/>
+  <p id="infotext"> {{info}} </p> 
+  <br/><br/>
+</div>
+</div>
+</div>
+</div>
+
+

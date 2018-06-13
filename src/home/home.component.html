@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row">
+    <div class="col-sm-12"><br/>
+        <h2>Task List</h2><br/>
+        <div class="content">
+        <input type="text" placeholder="Add Task Here..." class="task" [(ngModel)]="theTask" (keyup.enter)="addingTask(i)"><button mat-button class="button" (click)="addingTask(i)">Add</button>
+        <br/><br/>
+    </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="col-sm-12 styleAlert">
+        <div class="alert alert-danger" *ngIf="alertOn"><strong>Warning: </strong>Sorry, No task was added. Please Try Again.</div>
+    </div>
+    </div>
+        
+        
+        <div class="col-sm-12">
+            <div class="col-sm-12 content"  *ngFor="let itemTask of getTask;let i = index">
+                <div class="row">
+        <mat-checkbox class="checkbox col-sm-1" [checked]="false" [(ngModel)]="itemTask.completed"></mat-checkbox>
+        <div class="col-sm-6 allTasks" id="theTask" [ngClass]="{'strike' : itemTask.completed}">Task {{i + 1}} : {{itemTask.theTask}}</div>
+        <mat-icon class="col-sm-1 remove" (click)="removeTask(i)">delete_sweep</mat-icon>
+        <hr class="hrLine" width="100%">
+    </div>
+           
+</div>
+    </div>
+</div>
+
+
+
+

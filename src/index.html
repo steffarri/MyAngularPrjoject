@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>AngularProject5</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="/path/to/parallax.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+</head>
+
+<body class="parallax-background">
+  <app-root>Loading...</app-root>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script scr="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+<style>
+  .parallax-background {
+   background-image: url('/assets/space2.jpg');
+    background-position: 50% 0;
+    background-repeat: repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+   transform: translate3d(0,0,0);
+   image-rendering: -webkit-optimize-contrast;
+   width: 100%;
+   height: 100%;
+}
+</style>
+
+<script>
+  $(function() {
+   var $el = $('.parallax-background');
+   $(window).on('scroll', function () {
+       var scroll = $(document).scrollTop();
+       $el.css({
+           'background-position':'50% '+(-.4*scroll)+'px'
+      });
+  });
+});
+
+  //document.getElementsByClassName('body').parallax({imageSrc: '/assets/space2.jpg'});
+ 
+</script>

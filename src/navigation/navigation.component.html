@@ -1,0 +1,32 @@
+
+                <mat-toolbar class="toolbar" *ngIf="service.visible" >
+                       <span class="centertabs">
+                        <span class="align" routerLink="/home"><mat-icon>home</mat-icon> Home </span>
+                        <span class="align" routerLink="/destinations"> <mat-icon>commute</mat-icon> Destinations</span>
+                        <span class="align" routerLink="/about"><mat-icon>accessibility</mat-icon> About</span>
+      
+                  </span>
+                
+                  
+                  <mat-button-toggle-group  class="toggleButton">
+                        <mat-button-toggle value="justify" [matMenuTriggerFor]="menu">
+                              <mat-icon>format_align_justify</mat-icon>
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                  
+                                         
+                                          <mat-menu #menu="matMenu">
+                                            <button mat-menu-item routerLink="/home">
+                                            <mat-icon>home</mat-icon>
+                                            <span>Home</span>
+                                          </button>
+                                            <button mat-menu-item routerLink="/destinations">
+                                            <mat-icon>commute</mat-icon>
+                                            <span>Destinations</span>
+                                          </button>
+                                            <button mat-menu-item routerLink="/about">
+                                                <mat-icon>accessibility</mat-icon>
+                                            <span>About</span>
+                                          </button>
+                                          </mat-menu>
+                                       

@@ -1,0 +1,104 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+p {
+    color: pink;
+}
+
+.task {
+   width : 300px;
+}
+
+.container {
+    background-color: white;
+}
+
+.button {
+    background-color: rgb(224, 24, 107);
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.alert {
+    text-align: center;
+    color: black;
+    width: 100%;
+    animation: shake 0.5s;
+    animation-iteration-count: 1s;
+    &:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+.content {
+    text-align: center;
+}
+.hrLine {
+    color: rgb(224, 24, 107);
+    background-color: rgb(224, 24, 107);
+}
+.allTasks {
+    text-align: left;
+    word-wrap: break-word;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(224, 24, 107);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.remove {
+color: red;
+cursor: pointer;
+}
+
+.checkbox {
+padding-left: 200px;
+}
+
+.done {
+    color: green;
+    margin-left: 20px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+//ipad
+@media only screen and (min-width: 768px) and  (max-width: 1024px)  { 
+    .checkbox {
+        padding-left: 140px;
+    }
+}
+
+//iphone x
+@media only screen and (min-width: 375px) and  (max-width: 812px)  { 
+    .checkbox {
+        width: 20px;
+        padding-left: 3px;
+    }
+    .allTasks {
+        width: 250px;
+    }
+}

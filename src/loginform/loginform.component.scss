@@ -1,0 +1,77 @@
+$black : black;
+$fadedwhite : rgba(255, 255, 255, 0.5);
+
+.flex-container
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+.form 
+{
+    
+    padding-top: 45px;
+    position: absolute;
+    border-color: $black;
+    border-radius: 5px;
+    border-style: solid;
+    width: 400px;
+    text-align:  center;
+   
+    background-color: $fadedwhite;
+    border-radius: 10px;
+}
+.align {
+    text-align: center;
+    
+}
+.block
+{
+   
+    display: inline-block;
+    padding-left: 40px;
+    
+    
+}
+
+.text {
+    color: black;
+}
+
+.align
+{
+    justify-content: center;
+}
+
+.btn
+{
+    background-color: darkblue;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+        color: darkblue;
+        cursor: pointer;
+    }
+}
+
+
+.text {
+    color: black;
+    
+}
+
+.inline
+{
+    display: inline;
+    padding-left: 20px;
+    padding-top: 5px;
+   
+    
+}
+

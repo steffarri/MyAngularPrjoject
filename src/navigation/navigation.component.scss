@@ -1,0 +1,63 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$purple : #2E2D88;
+$white : white;
+$hotpink : #ff1d8e;
+
+.navbar {
+    background-color: black;
+    color: white;
+    border-style: solid;
+    border-color: blue
+
+}
+
+button {
+    color: white;
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  .align {
+     padding-right: 80px;
+    &:hover {
+       
+          color: $hotpink;
+    }
+    &:active {
+        color: green;
+    }
+  }
+
+  .toggleButton {
+      background-color: $white;
+  }
+  
+
+  .centertabs {
+      justify-content: center;
+      flex: 1 1 auto; 
+  }
+
+ .toolbar {
+      background-color: $purple;
+      color:$white;
+     
+
+  }
+
+  @media only screen and (min-width: 600px) {
+    .toggleButton {
+
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .align {
+
+        display: none;
+    }
+}

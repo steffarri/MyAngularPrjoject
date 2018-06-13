@@ -1,0 +1,52 @@
+$black : black;
+$fadedwhite : rgba(255, 255, 255, 0.5);
+
+.flex-container
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.form2
+{
+    background-color: $fadedwhite;
+}
+.form {
+    padding-top: 45px;
+    position: absolute;
+    border-color: $black;
+    border-radius: 5px;
+    border-style: solid;
+    height: 180px;
+    width: 300px;
+    background-color: $fadedwhite;
+    border-radius: 10px;
+    
+}
+$buttons: (
+    button
+);
+
+@each $item in $buttons  {
+button {
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+}
+
+.btn-purple
+{
+    background-color: darkblue;
+    color: white;
+
+}
+
+.btn-purple:hover
+{
+    background-color: white;
+    color: darkblue;
+}
+
