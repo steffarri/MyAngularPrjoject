@@ -1,18 +1,56 @@
 $fadedwhite : rgba(255, 255, 255, 0.5);
+$white : white;
+$black : black;
 
 
 .map {
     padding-left: 80px;
 }
-
 agm-map {
     padding-left: 150px;
     height: 500px;
     width: 600px;
-    max-width: 100%;
-    
+    max-width: 100%; 
   }
-
+  h1 {
+      color: $white;
+      text-align: center;
+      justify-content: center;
+  }
+  .info {
+      color: $white;
+     font-size: 20px;
+     font-weight: bold;
+     padding-right: 60px;
+  }
+  .description {
+    background-color: $fadedwhite;
+    color: $black;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+  }
+  #biglabel {
+      font-size: 32px;
+      text-align: center;
+      justify-content: center;
+  }
+  #infotext {
+      justify-content: center;
+      text-align: center;
+  }
+  //iphone 6/7/8 plus
+  @media only screen and (min-width: 414px) and  (max-width: 736px)  { 
+      .map {
+          padding-left: 70px;
+      }
+  }
+  @media only screen and (max-width: 1366px) and (min-width: 768px) {
+      agm-map {
+          width: 600px;
+      }
+  }
   @media only screen and (max-width: 600px) {
     agm-map {
         width: 300px;
@@ -21,7 +59,6 @@ agm-map {
         zoom: 0;
     }
 }
-
 //ipad
 @media only screen and (min-width: 768px) and  (max-width: 1024px)  {
     agm-map {
@@ -44,11 +81,9 @@ agm-map {
         height: 400px;
         text-align: center;
         zoom: 0;
-    
     }
     .description{
         font-size: 16px;
-       
     }
 }
 //iphone x
@@ -74,43 +109,8 @@ agm-map {
         font-size: 16px;
     }
 }
-
-  h1 {
-      color: white;
-      text-align: center;
-      justify-content: center;
-  }
-
-  .info {
-      color: white;
-     font-size: 20px;
-     font-weight: bold;
-     padding-right: 60px;
-  }
-
-  .description {
-    background-color: $fadedwhite;
-    color: black;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  #biglabel {
-      font-size: 32px;
-      text-align: center;
-      justify-content: center;
-  }
-
-  #infotext {
-      justify-content: center;
-      text-align: center;
-  }
-
-  //iphone 6/7/8 plus
-  @media only screen and (min-width: 414px) and  (max-width: 736px)  { 
-      .map {
-          padding-left: 70px;
-      }
-  }
+@media only screen and (max-width: 1366px) and (min-width: 768px) {
+    agm-map {
+        width: 600px;
+    }
+}

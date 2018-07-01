@@ -1,5 +1,7 @@
 $black : black;
 $fadedwhite : rgba(255, 255, 255, 0.5);
+$darkblue : darkblue;
+$white : white;
 
 .flex-container
 {
@@ -7,7 +9,6 @@ $fadedwhite : rgba(255, 255, 255, 0.5);
     justify-content: center;
     text-align: center;
 }
-
 .form2
 {
     background-color: $fadedwhite;
@@ -22,7 +23,6 @@ $fadedwhite : rgba(255, 255, 255, 0.5);
     width: 300px;
     background-color: $fadedwhite;
     border-radius: 10px;
-    
 }
 $buttons: (
     button
@@ -34,19 +34,16 @@ button {
     width: 150px;
     height: 35px;
     margin-bottom: 20px;
+       }
 }
-}
-
 .btn-purple
 {
-    background-color: darkblue;
-    color: white;
-
+    background-color: $darkblue;
+    color: $white;
 }
-
 .btn-purple:hover
 {
-    background-color: white;
-    color: darkblue;
+    background-color: $white;
+    color: $darkblue;
 }
 

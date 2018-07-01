@@ -14,10 +14,11 @@ import {MatInputModule, MatFormFieldModule} from '@angular/material';
 export class NewUserFormComponent implements OnInit {
   user : User;
 
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  public regexPattern = '^[a-zA-Z0-9._-]+$';
   constructor(private router: Router, private service : LoginService) {
 
   }
+
 
   ngOnInit() {
     this.user = {
@@ -45,9 +46,26 @@ export class NewUserFormComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  loginSubmit() {
-    this.service.show();
-    this.router.navigate(['home']);
+  OnSubmit(form : NgForm) {
+    this.service.registerUser(form.value)
+    .subscribe((data:any) => {
+      debugger;
+      try {
+      if(data.Succeeded == true)
+      {
+      this.resetForm();
+      this.service.show();
+      this.router.navigate(['home']);
+      }
+      else {
+        alert("Sorry, something went wrong, please try again");
+      }
+    }catch(ex) {
+        var error = ex.toString();
+        console.log(error);
+    }
+      
+    });
   }
   
 }

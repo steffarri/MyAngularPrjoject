@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable, ApplicationRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { allResolved } from 'q';
@@ -19,7 +18,9 @@ import { MarkersInfoComponent } from '../destinations/markersinfo';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialAppModule } from './ngmaterial.module';
-//import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpHeaders, HttpClient} from '@angular/common/http';
+
 
 
 
@@ -50,18 +51,20 @@ const allRoutes : Routes = [
     RouterModule.forRoot(allRoutes, {enableTracing: true}),
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     HttpModule,
+   
+    
     CommonModule,
     BrowserAnimationsModule,
     MaterialAppModule,
-    //MatButtonModule, 
-    //MatCheckboxModule,
+   
     AgmCoreModule.forRoot({ 
       apiKey: 'AIzaSyDgn91x_6QI4Ui5ER8olgGHguHlL82FHVY'
     })
    
   ],
-  providers: [LoginService, MarkersInfoComponent],
+  providers: [LoginService, MarkersInfoComponent, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

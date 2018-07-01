@@ -12,8 +12,9 @@
                           <div class="input-field">
                               <mat-form-field>
                                     <mat-label for="username">Username</mat-label>
-                            <input matInput id="username" class="validate" type="text" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" placeholder="Username" required>
-                            <mat-error>Required Field!</mat-error>
+                            <input matInput id="username" class="validate" type="text" pattern="[a-zA-Z ]*" ngModel  name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" placeholder="Username" required>
+                            <mat-error>No symbols</mat-error>
+                            <mat-error *ngIf="user.UserName == ''">Required Field</mat-error>
                         </mat-form-field>
                           </div>
                           <div class="input-field">
@@ -52,7 +53,7 @@
                         <div class="row">
                                 <div class="col-sm-12 buttons">
                                     <button class="col-sm-4 btn" (click)="redirectToLogin()">Back</button>
-                                    <button  class="col-sm-4 btn" type="submit">Submit</button>
+                                    <button  class="col-sm-4 btn" type="submit" (click)="OnSubmit(userRegistrationForm)">Submit</button>
                                 </div>
                             </div>
                   </form>

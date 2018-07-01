@@ -1,26 +1,28 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$pink : pink;
+$hotpink : rgb(224, 24, 107);
+$white: white;
+$black : black;
+$red : red;
+$green : green;
 
 p {
-    color: pink;
+    color: $pink;
 }
-
 .task {
    width : 300px;
 }
-
 .container {
-    background-color: white;
+    background-color: $white;
 }
-
 .button {
-    background-color: rgb(224, 24, 107);
+    background-color: $hotpink;
     margin-left: 20px;
     border-radius: 10px;
 }
-
 .alert {
     text-align: center;
-    color: black;
+    color: $black;
     width: 100%;
     animation: shake 0.5s;
     animation-iteration-count: 1s;
@@ -29,11 +31,9 @@ p {
         animation-iteration-count: infinite;
     }
 }
-
 .strike {
     text-decoration: line-through;
 }
-
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -47,51 +47,43 @@ p {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
-
 .content {
     text-align: center;
 }
 .hrLine {
-    color: rgb(224, 24, 107);
-    background-color: rgb(224, 24, 107);
+    color:$hotpink;
+    background-color: $hotpink;
 }
 .allTasks {
     text-align: left;
     word-wrap: break-word;
 }
-
 h2 {
     text-align: center;
-    color: rgb(224, 24, 107);
+    color: $hotpink;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
 }
-
 .remove {
-color: red;
+color: $red;
 cursor: pointer;
 }
-
 .checkbox {
 padding-left: 200px;
 }
-
 .done {
-    color: green;
+    color: $green;
     margin-left: 20px;
     &:hover {
         cursor: pointer;
     }
 }
-
-
 //ipad
 @media only screen and (min-width: 768px) and  (max-width: 1024px)  { 
     .checkbox {
         padding-left: 140px;
     }
 }
-
 //iphone x
 @media only screen and (min-width: 375px) and  (max-width: 812px)  { 
     .checkbox {
