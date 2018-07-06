@@ -4,6 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "preinstall": "npm i typings -g",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
