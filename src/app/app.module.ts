@@ -43,7 +43,8 @@ const allRoutes : Routes = [
     NewUserFormComponent,
     NavigationComponent,
     AboutComponent,
-    DestinationsComponent
+    DestinationsComponent,
+    MarkersInfoComponent
     
     
   ],

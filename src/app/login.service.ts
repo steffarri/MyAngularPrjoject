@@ -14,9 +14,9 @@ export class LoginService {
   private headers : HttpHeaders;
   private success : boolean = false;
   private smallernav : boolean = false;
-  readonly rooturl = "http://localhost:49749/";
+  readonly rooturl = "http://angularwebapifordestinations.azurewebsites.net/";
   public newData;
-
+  public isLoggedIn : boolean = false;
 
   constructor(private http : HttpClient, private gethttp : HttpClientModule)
    { 

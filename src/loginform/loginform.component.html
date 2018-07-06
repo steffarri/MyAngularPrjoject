@@ -1,7 +1,7 @@
 <div class="col-sm-12 flex-container">
   <div class="form">
     
-    <form class="col s12 colorform" #userLoginForm="ngForm">
+    <form class="col s12 colorform" #userLoginForm="ngForm" (ngSubmit)="loginSubmit(userLoginForm)">
       <div class="col-sm-12 align flex-container">
         <div class="col-sm-2 inline"><span class="text">Username: </span></div>
         <div class="col-sm-6 block"><input type="text" class="form-control text" name="UserName" #UserName="ngModel" [(ngModel)]="getUser.UserName" placeholder="Username"></div>
@@ -13,8 +13,8 @@
       </div>
       <div *ngIf="error" class="errorLine">Sorry, Incorrect Username or Password</div>
         <br/><br/><br/>
-        <button (click)="redirectToLogin()" class="btn">Back</button>
-        <button (click)="loginSubmit(userLoginForm)" class="btn">Login</button>
+        <button (click)="redirectToLogin()" type="button" class="btn">Back</button>
+        <button type="submit" class="btn">Login</button>
     </form>
   </div>
 </div>

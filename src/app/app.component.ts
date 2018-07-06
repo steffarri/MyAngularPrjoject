@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {LoginComponent} from '../login/login.component';
+import {LoginService} from '../app/login.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +12,9 @@ export class AppComponent {
   
 //loggedInn : boolean = false;
 
-constructor() {
-
+constructor(private service : LoginService, private router : Router) {
+if (service.isLoggedIn == false)
+  this.router.navigate(['']);
 
 
 }

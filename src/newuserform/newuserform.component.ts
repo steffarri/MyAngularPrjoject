@@ -13,6 +13,7 @@ import {MatInputModule, MatFormFieldModule} from '@angular/material';
 })
 export class NewUserFormComponent implements OnInit {
   user : User;
+  public usernameError : boolean = false;
 
   public regexPattern = '^[a-zA-Z0-9._-]+$';
   constructor(private router: Router, private service : LoginService) {
@@ -49,7 +50,6 @@ export class NewUserFormComponent implements OnInit {
   OnSubmit(form : NgForm) {
     this.service.registerUser(form.value)
     .subscribe((data:any) => {
-      debugger;
       try {
       if(data.Succeeded == true)
       {
@@ -57,12 +57,9 @@ export class NewUserFormComponent implements OnInit {
       this.service.show();
       this.router.navigate(['home']);
       }
-      else {
-        alert("Sorry, something went wrong, please try again");
-      }
     }catch(ex) {
-        var error = ex.toString();
-        console.log(error);
+      if(this.user.UserName != '')
+      this.usernameError = true;
     }
       
     });

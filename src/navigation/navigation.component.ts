@@ -13,7 +13,7 @@ export class NavigationComponent {
   public success : boolean = true;
   
   loggedIn = false;
-  constructor(private router : Router, private service : LoginService) {
+  constructor(private router : Router, public service : LoginService) {
    
   }
 

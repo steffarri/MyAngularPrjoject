@@ -10,7 +10,7 @@ import {$} from 'jquery';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+i : any;
 getTask : any;
 taskObject : any;
 theTask : string = "";

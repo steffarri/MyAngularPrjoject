@@ -12,9 +12,10 @@ $red : red;
 }
 .errorLine 
 {
-    color: red;
+    color: $red;
     font-weight: bold;
     animation:  shake 0.5s;
+    background-color: $white;
 }
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }

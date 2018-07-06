@@ -24,6 +24,12 @@ $darkblue : darkblue;
 mat-error {
     background-color: $white;
 }
+.errorformat
+{
+    background-color: $white;
+    color: red;
+    font-size: 16px;
+}
 .colorform {
     color: $black;
 }

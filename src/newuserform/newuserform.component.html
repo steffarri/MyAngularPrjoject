@@ -7,16 +7,19 @@
                   <div class="sm-jumbotron">
                       <h2>User Registration</h2>
                   </div>
-                  <form class="col s12 colorform" #userRegistrationForm="ngForm">
+                  <form class="col s12 colorform" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
                       <div class="row">
                           <div class="input-field">
                               <mat-form-field>
                                     <mat-label for="username">Username</mat-label>
                             <input matInput id="username" class="validate" type="text" pattern="[a-zA-Z ]*" ngModel  name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName" placeholder="Username" required>
-                            <mat-error>No symbols</mat-error>
                             <mat-error *ngIf="user.UserName == ''">Required Field</mat-error>
+                            <div class="errorformat" *ngIf="usernameError">Username already exists</div>
+                            
                         </mat-form-field>
+                       
                           </div>
+                          
                           <div class="input-field">
                                 <mat-form-field>
                                         <mat-label for="Password" [attr.data.error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 3 characters needed'):''">Password</mat-label>
@@ -52,8 +55,8 @@
                         </div>
                         <div class="row">
                                 <div class="col-sm-12 buttons">
-                                    <button class="col-sm-4 btn" (click)="redirectToLogin()">Back</button>
-                                    <button  class="col-sm-4 btn" type="submit" (click)="OnSubmit(userRegistrationForm)">Submit</button>
+                                    <button class="col-sm-4 btn" type="button" (click)="redirectToLogin()">Back</button>
+                                    <button  class="col-sm-4 btn" type="submit" >Submit</button>
                                 </div>
                             </div>
                   </form>

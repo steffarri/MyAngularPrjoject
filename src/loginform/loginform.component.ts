@@ -18,6 +18,7 @@ export class LoginFormComponent implements OnInit {
   public username : string;
   public password: string;
   public error: boolean = false;
+  public isLoggedIn : boolean = false;
 
   constructor(private router : Router, private service: LoginService) {
 
@@ -48,6 +49,14 @@ export class LoginFormComponent implements OnInit {
     
     this.router.navigate(['']);
   }
+
+  keyDownSubmit(event, form: NgForm) {
+    debugger;
+    if (event.keyCode == 13)
+      {
+        this.loginSubmit(form);
+      }
+  }
   
   loginSubmit(form: NgForm) {
    
@@ -64,6 +73,7 @@ export class LoginFormComponent implements OnInit {
         if(data.UserName != null ) {
         this.resetForm();
         this.service.show();
+        this.isLoggedIn = true;
     this.router.navigate(['home']);
         }
         else

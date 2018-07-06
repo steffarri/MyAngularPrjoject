@@ -19,6 +19,7 @@ export class DestinationsComponent {
   infoWindowOpen = null;
   public maps: GoogleMapsAPIWrapper;
   public zoom: number = 4;
+  z : any;
   lat : number = 37.09024;
   lng : number = -98.712891;
 
@@ -51,9 +52,9 @@ export class DestinationsComponent {
 {
     lat: 47.614249,
     lng: -122.328225,
-    label: "Starbucks Roastery",
+    label: "Seattle",
     draggable: false,
-    info: this.markerinfo.StarbuckRoastery
+    info: this.markerinfo.Seattle
 },
 {
   lat: 39.286550,
@@ -158,6 +159,34 @@ export class DestinationsComponent {
   draggable: false,
   info: this.markerinfo.NorthCarolina
 },
+{
+  lat: 34.415719,
+  lng:  -119.745918,
+  label: "Santa Barbara",
+  draggable: false,
+  info: this.markerinfo.SantaBarbara
+},
+{
+  lat: 34.595213,
+  lng:  -120.141364,
+  label: "Solvang",
+  draggable: false,
+  info: this.markerinfo.Solvang
+},
+{
+  lat: 34.010049, 
+  lng:  -118.497149,
+  label: "Santa Monica",
+  draggable: false,
+  info: this.markerinfo.SantaMonica
+},
+{
+  lat: 32.743656, 
+  lng:  -117.225715,
+  label: "San Diego",
+  draggable: false,
+  info: this.markerinfo.SanDiego
+},
   ]
 
 
@@ -182,7 +211,7 @@ export class DestinationsComponent {
   }
 
   markerClick(infoWindow, info, label) {
-    this.zoom = 8;
+    //this.zoom = 8;
     
     if (this.infoWindowOpen === infoWindow)
     return;
