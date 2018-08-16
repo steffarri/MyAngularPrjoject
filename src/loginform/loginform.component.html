@@ -1,6 +1,5 @@
 <div class="col-sm-12 flex-container">
   <div class="form">
-    
     <form class="col s12 colorform" #userLoginForm="ngForm" (ngSubmit)="loginSubmit(userLoginForm)">
       <div class="col-sm-12 align flex-container">
         <div class="col-sm-2 inline"><span class="text">Username: </span></div>
@@ -13,8 +12,14 @@
       </div>
       <div *ngIf="error" class="errorLine">Sorry, Incorrect Username or Password</div>
         <br/><br/><br/>
+        <div id ="center" style="position:fixed;top:120%;left:47%">
+          <mat-spinner *ngIf="loading" class="spinner" mode="indeterminate" ></mat-spinner>
+        
+        </div>
+        
         <button (click)="redirectToLogin()" type="button" class="btn">Back</button>
         <button type="submit" class="btn">Login</button>
+        
     </form>
   </div>
 </div>

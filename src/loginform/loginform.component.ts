@@ -14,6 +14,7 @@ import { NgForm } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
   getUser : User;
   user: User;
+  public loading: boolean = false;
   public userobject : any;
   public username : string;
   public password: string;
@@ -60,7 +61,7 @@ export class LoginFormComponent implements OnInit {
   
   loginSubmit(form: NgForm) {
    
-    
+    this.loading = true;
     this.service.getUser(form.value)
         .subscribe((data: any) => {
       try {
@@ -68,6 +69,7 @@ export class LoginFormComponent implements OnInit {
         if(data == null)
         {
           this.error = true;
+          this.loading = false;
           return;
         }
         if(data.UserName != null ) {
@@ -82,6 +84,7 @@ export class LoginFormComponent implements OnInit {
         var error = ex.toString();
         console.log(error);
       }
+      this.loading = false;
     });
   }
 }
