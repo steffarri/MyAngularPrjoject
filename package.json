@@ -38,6 +38,7 @@
     "js-marker-clusterer": "^1.0.0",
     "node-sass": "^4.9.3",
     "rxjs": "^5.5.10",
+    "sass-loader": "^7.1.0",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.8.26"
   },
@@ -59,6 +60,7 @@
     "ts-node": "6.0.0",
     "tslint": "^5.10.0",
     "typescript": "^2.6.2",
+    "node-sass": "^4.9.3",
     "webpack-cli": "^3.0.8",
     "webpack-command": "^0.4.0"
   }
