@@ -59,6 +59,10 @@ export class NewUserFormComponent implements OnInit {
       this.service.show();
       this.router.navigate(['home']);
       }
+      else
+        {
+          this.usernameError = true;
+        }
     }catch(ex) {
       if(this.user.UserName != '')
       this.usernameError = true;
